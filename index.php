@@ -2,7 +2,9 @@
 <?php
 
 require_once __DIR__ . '/Model/E-Commerce.php';
-require_once __DIR__ . '/Model/Food_product.php';
+require_once __DIR__ . '/Model/Product.php';
+require_once __DIR__ . '/Model/Cat.php';
+require_once __DIR__ . '/Model/Dog.php';
 
 require_once __DIR__ . '/data/db.php';
 
@@ -24,17 +26,18 @@ $shop = new E_commerce('Negozio di Animali', 'negozio con prodotti per cani e ga
 
    <title>E-Commerce</title>
 </head>
-<body class="bg-light">
+<body>
 
-   <div class="container  border  text-center  mt-5">
-      <h1>Negozio di Animali</h1>
+   <div class="container  text-center  mt-5">
+      <h1> <?php echo $shop->title ?> </h1>
+      <p class="fs-4  mt-4"> <?php echo $shop->description ?> </p>
 
       <div class="d-flex  justify-content-center  flex-wrap  my-4">
 
          <?php foreach($db_product as $product): ?>
-            <div class="col-2  text-center  border  p-4  m-2">
+            <div class="col-2  text-center  border  bg-light  rounded-4  p-4  m-2">
 
-               <p> <strong> <?php echo $product->animal ?> </strong> </p>
+               <h5> <?php echo $product->animal ?> </h5>
                <p> <?php echo $product->type ?> </p>
                <p> <?php echo $product->name ?> </p>
 

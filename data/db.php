@@ -2,22 +2,19 @@
 <?php
 
 $db_product =
-[
-   new Product('cane', 'food', 'croccantini'),
-   new Product('gatto', 'food', 'croccantini'),
-   new Product('gatto', 'food', 'scatoletta'),
-   new Product('gatto', 'food', 'scatoletta'),
+   [
+      new Dog('cane', 'food', 'croccantini'),
+      new Cat('gatto', 'food', 'croccantini'),
+      new Cat('gatto', 'food', 'scatoletta'),
+      new Cat('gatto', 'food', 'scatoletta'),
 
-   new Product('gatto', 'toy', 'pallina'),
-   new Product('cane', 'toy', 'osso duro'),
-   new Product('cane', 'toy', 'osso morbido'),
+      new Cat('gatto', 'toy', 'pallina'),
+      new Dog('cane', 'toy', 'osso duro'),
+      new Dog('cane', 'toy', 'osso morbido'),
 
-   new Product('gatto', 'beds', 'cuccia di plastica'),
-   new Product('cane', 'beds', 'cuccia di plastica'),
-   new Product('cane', 'beds', 'cuccia morbida'),
-
-]
-
-
+      new Cat('gatto', 'beds', 'cuccia di plastica'),
+      new Dog('cane', 'beds', 'cuccia di plastica'),
+      new Dog('cane', 'beds', 'cuccia morbida'),
+   ]
 
 ?>

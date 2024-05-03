@@ -12,6 +12,5 @@ class Product{
       $this->name = $_name;
    }
 
-
 }
 ?>
