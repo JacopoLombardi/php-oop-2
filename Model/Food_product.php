@@ -1,7 +1,7 @@
 
 <?php
 
-class Food_product{
+class Product{
    public $animal;
    public $type;
    public $name;

@@ -24,28 +24,25 @@ $shop = new E_commerce('Negozio di Animali', 'negozio con prodotti per cani e ga
 
    <title>E-Commerce</title>
 </head>
-<body>
+<body class="bg-light">
 
    <div class="container  border  text-center  mt-5">
       <h1>Negozio di Animali</h1>
 
-      <div class="d-flex  mt-4">
+      <div class="d-flex  justify-content-center  flex-wrap  my-4">
 
          <?php foreach($db_product as $product): ?>
-            <div class="col-3  text-center  border  p-4">
+            <div class="col-2  text-center  border  p-4  m-2">
 
                <p> <strong> <?php echo $product->animal ?> </strong> </p>
                <p> <?php echo $product->type ?> </p>
                <p> <?php echo $product->name ?> </p>
-
 
             </div>
          <?php endforeach ?>
 
       </div>
    </div>
-
-
    
 </body>
 </html>
