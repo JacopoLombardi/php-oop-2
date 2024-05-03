@@ -3,7 +3,10 @@
 
 $db_product =
 [
-   new Product();
+   new Food_product('cane', 'food', 'croccantini'),
+   new Food_product('gatto', 'food', 'croccantini'),
+
+   
 ]
 
 
