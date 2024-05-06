@@ -3,12 +3,16 @@
 
 require_once __DIR__ . '/Model/E-Commerce.php';
 require_once __DIR__ . '/Model/Product.php';
-require_once __DIR__ . '/Model/Cat.php';
-require_once __DIR__ . '/Model/Dog.php';
+require_once __DIR__ . '/Model/Food.php';
+require_once __DIR__ . '/Model/Toy.php';
+require_once __DIR__ . '/Model/Accessory.php';
+require_once __DIR__ . '/Model/Type_animal.php';
 
 require_once __DIR__ . '/data/db.php';
 
 $shop = new E_commerce('Negozio di Animali', 'negozio con prodotti per cani e gatti');
+
+$category_food = array_filter($db_product, fn ($product) => get_class($product) === 'Food');
 
 ?>
 
@@ -34,15 +38,24 @@ $shop = new E_commerce('Negozio di Animali', 'negozio con prodotti per cani e ga
 
       <div class="d-flex  justify-content-center  flex-wrap  my-4">
 
-         <?php foreach($db_product as $product): ?>
+         <!-- Food -->
+         <?php foreach($category_food as $product): ?>
             <div class="col-2  text-center  border  bg-light  rounded-4  p-4  m-2">
 
-               <h5> <?php echo $product->animal ?> </h5>
-               <p> <?php echo $product->type ?> </p>
-               <p> <?php echo $product->name ?> </p>
+               <h5> <?php echo $product->name ?> </h5>
+               <p>&euro; <?php echo $product->price ?> </p>
+
+               <h6>ingredienti:</h6>
+
+               <ul class="list-unstyled">
+                  <?php foreach($product->ingredients as $ingredient): ?>
+                     <li> <?php echo $ingredient ?> </li>
+                  <?php endforeach; ?>
+               </ul>
 
             </div>
-         <?php endforeach ?>
+         <?php endforeach; ?>
+
 
       </div>
    </div>

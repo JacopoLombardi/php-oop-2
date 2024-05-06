@@ -2,15 +2,17 @@
 <?php
 
 class Product{
-   public $animal;
-   public $type;
    public $name;
+   public $code;
+   public $price;
+   public $type_animal;
 
-   public function __construct(string $_animal, string $_type, string $_name){
-      $this->animal = $_animal;
-      $this->type = $_type;
+   public function __construct(string $_name, string $_code, float $_price, Type_animal $_type_animal){
       $this->name = $_name;
+      $this->code = $_code;
+      $this->price = $_price;
+      $this->type_animal = $_type_animal;
    }
-
 }
+
 ?>
