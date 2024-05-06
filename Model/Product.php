@@ -13,6 +13,7 @@ class Product{
       $this->price = $_price;
       $this->type_animal = $_type_animal;
    }
+
 }
 
 ?>

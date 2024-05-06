@@ -12,8 +12,13 @@ require_once __DIR__ . '/data/db.php';
 
 $shop = new E_commerce('Negozio di Animali', 'negozio con prodotti per cani e gatti');
 
+// filtro i prodotti per categoria, mettendoli in un array separato
 $category_food = array_filter($db_product, fn ($product) => get_class($product) === 'Food');
+$category_toy = array_filter($db_product, fn ($product) => get_class($product) === 'Toy');
+$category_accessory = array_filter($db_product, fn ($product) => get_class($product) === 'Accessory');
 
+
+var_dump($db_product)
 ?>
 
 
@@ -38,6 +43,8 @@ $category_food = array_filter($db_product, fn ($product) => get_class($product) 
 
       <div class="d-flex  justify-content-center  flex-wrap  my-4">
 
+
+
          <!-- Food -->
          <?php foreach($category_food as $product): ?>
             <div class="col-2  text-center  border  bg-light  rounded-4  p-4  m-2">
@@ -46,16 +53,44 @@ $category_food = array_filter($db_product, fn ($product) => get_class($product) 
                <p>&euro; <?php echo $product->price ?> </p>
 
                <h6>ingredienti:</h6>
-
                <ul class="list-unstyled">
                   <?php foreach($product->ingredients as $ingredient): ?>
-                     <li> <?php echo $ingredient ?> </li>
+                     <li>- <?php echo $product->ingredients->setIngredients() ?> </li>
                   <?php endforeach; ?>
                </ul>
 
             </div>
          <?php endforeach; ?>
 
+
+
+         <!-- Toy -->
+         <?php foreach($category_toy as $product): ?>
+            <div class="col-2  text-center  border  bg-light  rounded-4  p-4  m-2">
+
+               <h5> <?php echo $product->name ?> </h5>
+               <p>&euro; <?php echo $product->price ?> </p>
+
+               <h6>taglia:</h6>
+               <p> <?php echo $product->size ?> </p>
+
+            </div>
+         <?php endforeach; ?>
+
+
+
+         <!-- Accessory -->
+         <?php foreach($category_accessory as $product): ?>
+            <div class="col-2  text-center  border  bg-light  rounded-4  p-4  m-2">
+
+               <h5> <?php echo $product->name ?> </h5>
+               <p>&euro; <?php echo $product->price ?> </p>
+
+               <h6>material:</h6>
+               <p> <?php echo $product->material ?> </p>
+
+            </div>
+         <?php endforeach; ?>
 
       </div>
    </div>
