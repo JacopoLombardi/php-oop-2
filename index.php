@@ -31,6 +31,11 @@ $category_accessory = array_filter($db_product, fn ($product) => get_class($prod
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
+   <!-- Font Awesome -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+   <link rel="stylesheet" href="./css/style.css">
+
    <title>E-Commerce</title>
 </head>
 <body>
@@ -44,12 +49,14 @@ $category_accessory = array_filter($db_product, fn ($product) => get_class($prod
 
 
          <!-- Food -->
-         <?php foreach($category_food as $product): ?>
+         
+         <?php foreach($category_food as $product): ?>   
             <div class="col-2  text-center  border  bg-light  rounded-4  p-4  m-2">
 
+               <h4 class="border  rounded-5  bg-body-secondary  py-2"> <?php echo $product->type_animal->icon ?> </h4>
                <h5> <?php echo $product->name ?> </h5>
                <p>&euro; <?php echo $product->price ?> </p>
-               
+
                <h6>ingredienti:</h6>
                <ul class="list-unstyled">
                   <?php foreach($product->ingredients as $ingredient): ?>
@@ -59,13 +66,14 @@ $category_accessory = array_filter($db_product, fn ($product) => get_class($prod
 
             </div>
          <?php endforeach; ?>
-
+         
 
 
          <!-- Toy -->
          <?php foreach($category_toy as $product): ?>
             <div class="col-2  text-center  border  bg-light  rounded-4  p-4  m-2">
 
+               <h4 class="border  rounded-5  bg-body-secondary  py-2"> <?php echo $product->type_animal->icon ?> </h4>
                <h5> <?php echo $product->name ?> </h5>
                <p>&euro; <?php echo $product->price ?> </p>
 
@@ -81,12 +89,12 @@ $category_accessory = array_filter($db_product, fn ($product) => get_class($prod
          <?php foreach($category_accessory as $product): ?>
             <div class="col-2  text-center  border  bg-light  rounded-4  p-4  m-2">
 
+               <h4 class="border  rounded-5  bg-body-secondary  py-2"> <?php echo $product->type_animal->icon ?> </h4>
                <h5> <?php echo $product->name ?> </h5>
                <p>&euro; <?php echo $product->price ?> </p>
 
-               <h6>material:</h6>
+               <h6>materiale:</h6>
                <p> <?php echo $product->material ?> </p>
-
             </div>
          <?php endforeach; ?>
 

@@ -3,9 +3,11 @@
 
 class Type_animal{
    public $name;
+   public $icon;
 
-   public function __contruct(string $_name){
+   public function __construct(string $_name, string $_icon){
       $this->name = $_name;
+      $this->icon = $_icon;
    }
 }
 
