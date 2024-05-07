@@ -17,8 +17,6 @@ $category_food = array_filter($db_product, fn ($product) => get_class($product) 
 $category_toy = array_filter($db_product, fn ($product) => get_class($product) === 'Toy');
 $category_accessory = array_filter($db_product, fn ($product) => get_class($product) === 'Accessory');
 
-
-var_dump($db_product)
 ?>
 
 
@@ -51,11 +49,11 @@ var_dump($db_product)
 
                <h5> <?php echo $product->name ?> </h5>
                <p>&euro; <?php echo $product->price ?> </p>
-
+               
                <h6>ingredienti:</h6>
                <ul class="list-unstyled">
                   <?php foreach($product->ingredients as $ingredient): ?>
-                     <li>- <?php echo $product->ingredients->setIngredients() ?> </li>
+                     <li>- <?php echo $ingredient ?> </li>
                   <?php endforeach; ?>
                </ul>
 

@@ -9,17 +9,14 @@ class Food extends Product{
       $this->setIngredients($_ingredients);
    }
 
+   // se si inserisce un ingrediente con meno di 4 lettere il sito si blocca
    public function setIngredients($_ingredients){
-      var_dump($_ingredients);
-
       foreach($_ingredients as $item){
-         var_dump(strlen($item));
-
          if(strlen($item) < 4){
-            throw new exception('è stato inserito un nome troppo corto!');
-            
+            throw new Exception('è stato inserito un nome troppo corto!');
          }
       }
+      $this->ingredients = $_ingredients;
    }
 }
 
